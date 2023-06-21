@@ -17,17 +17,17 @@ async function createReferral(email, wallet) {
         const db = client.db(DB_NAME);
         const collection = db.collection(COLLECTION_NAME);
 
-        const existingDocument = await collection.findOne({ email });
-        if (existingDocument) {
-            return {
-                error: 'Email already exists',
-                existingDocument
-            };
-        } else {
+      //  const existingDocument = await collection.findOne({ email });
+      //  if (existingDocument) {
+      //      return {
+      //          error: 'Email already exists',
+      //          existingDocument
+      //      };
+      //  } else {
             const referralCode = referralCodes.generate({ length: 6, count: 1, dash: false })[0];
             await collection.insertOne({ email, wallet, referralCode });
             return { wallet, referralCode, email };
-        }
+      //  }
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
         return { error: 'Failed to connect to the database' };
