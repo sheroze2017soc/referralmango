@@ -1,8 +1,7 @@
 const referralCodes = require('referral-codes');
 const { MongoClient } = require('mongodb');
 
-
-const MONGO_URI = 'mongodb+srv://shahrozrehman:fZI2UkklKsfBuXPa@mangowallet.fu2ndfj.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI = 'mongodb+srv://mangowallet:LENxPrfUk2rxm36f@mangowallet.fu2ndfj.mongodb.net/?retryWrites=true&w=majority';
 const DB_NAME = 'MangoWalletData';
 const COLLECTION_NAME = 'userData';
 
