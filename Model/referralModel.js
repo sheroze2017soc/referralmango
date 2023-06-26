@@ -63,6 +63,10 @@ async function checkReferralCode(referralCode) {
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
         return { error: 'Failed to connect to the database' };
+    }finally {
+        if (client) {
+            client.close(); // Close the client connection if it exists
+        }
     }
 }
 // ...existing code...
@@ -95,6 +99,10 @@ async function loginReferral(email, referralCode, wallet) {
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
         return { error: 'Failed to connect to the database' };
+    }finally {
+        if (client) {
+            client.close(); // Close the client connection if it exists
+        }
     }
 }
 
@@ -122,6 +130,10 @@ async function checkEmail(email) {
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
         return { error: 'Failed to connect to the database' };
+    }finally {
+        if (client) {
+            client.close(); // Close the client connection if it exists
+        }
     }
 }
 
